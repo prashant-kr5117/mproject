@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Signup</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/signupStyle.css' %}">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css.map">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js">
+	</head>
+	<body>
+		<div class="form">
+			
+			<h1> Signup Here!</h1>
+
+			<form action="adddetail/" method="post" accept-charset="utf-8">
+				{%csrf_token%}
+				<input type="email"  name="email"  placeholder="Email" required><br>
+				<input type="password"  name="password"  placeholder="Password" required><br>
+				<input type="password"  name="cnfpassword"  placeholder="Confirm Password" required><br>
+				<input type="text"  name="fullname"  placeholder="Name" required><br>
+				<input type="date"  name="dob"  required><br>
+				<input type="tel"  name="num"  placeholder="Mobile Number" required"><br>   
+				<input type="radio" name="gender" value="male" checked><span class="rad">Male</span>
+				<input type="radio" name="gender" value="female"> <span class="rad">Female</span>
+				<button>Sign Up</button>
+				<h3>Already have account ? <a class="aclk" href="../">Click here!</a></h3>
+			</form>
+		</div>
+	</body>
+</html>

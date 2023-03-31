@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboardStyle.css' %}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <h3 style="margin-top:30%;">Popular Creator List</h3>
+        <div class="list">
+           <div class="rank"><span>1</span></div>
+           <div class="creator">
+             <a href="bmipage/">BMI Calculator</a>
+           </div>
+         </div>
+         <div class="list">
+           <div class="rank"><span>2</span></div>
+           <div class="creator">
+             <a href="/home">Disease Predication</a>
+           </div>
+         </div>
+         <div class="list">
+           <div class="rank"><span>3</span></div>
+           <div class="creator">
+             <a href="../../">SignOut</a>
+           </div>
+         </div>
+       </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width , initial-scale=1.0">
+
+	<title>BMI Calculator</title>
+	{% load static %}
+
+	<!-- Bootstrap-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bmiStyle.css' %}">
+	
+	<!-- JavaScript-->
+	<script type="text/javascript" src="{% static 'JS/bmiscript.js' %}"></script>
+</head>
+<body>
+
+	<h3 align="center"> BMI Calculator </h3> 
+
+	<div class="container">
+	 	<div class="mb-3">
+			<label for="Weight" class="form-label">Weight</label>
+			<input type="text" class="form-control" id="weight" placeholder="Enter Weight in Kg">
+		</div>
+		<div class="mb-3">
+			<label for="Height" class="form-label">Height</label>
+			<input type="text" class="form-control" id="height" placeholder="Enter Height in Cm">
+		</div>
+
+		<input type="submit" name="Check BMI" class="btn btn-primary" value="Check BMI" onclick="checkBMI()"> 
+
+		<ul>
+			<li>Weight: <span id="wout"></span></li>
+			<li>Height: <span id="hout"></span></li>
+		</ul>
+
+		<h4>BMI: <span id="BMI"></span><span><center><a href="../">Return To Dashboard</a></center></span></h4>
+	</div>
+<br/>
+  <section>
+    <h1>What is BMI</h1>
+    <div>
+     	<p>The body mass index (BMI) or Quetelet index is a value derived from the mass (weight) and height of an individual. The BMI is defined as the body mass divided by the square of the body height, and is universally expressed in units of kg/m2, resulting from mass in kilograms and height in metres.</p>
+	  	<h5>BMI Range Info</h5>
+		<h6>Between 0 to 18.4 &nbsp&nbsp&nbsp&nbsp UnderWeight</h6>
+		<h6>Between 18.5 to 24.9 &nbsp NormalWeight</h6>
+		<h6>Between 25 to 29.9 &nbsp&nbsp&nbsp OverWeight</h6>
+		<h6>Above 29.9 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Obesity</h6>
+    </div>
+  </section>
+
+<center>
+  <div id="overview"></div>
+</center>
+
+
+</body>
+</html>

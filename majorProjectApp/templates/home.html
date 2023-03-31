@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block contents %}
+<div class="container" style="	margin-top: 100px !important;
+	background-color: black !important;
+	border-radius: 100px solid white !important;
+	opacity: 0.7 !important;
+  color: #fff;
+  padding-top:30px; padding-bottom: 30px;">
+    <div class="container my-4">
+        <div class="form-group">
+            <div class="form-class">
+                <center>
+                <h3 class="glow font-weight-bold  text-black"> Get Yourself Checked<br/> Enter Your Symptoms </h3>
+                </center>
+                <div style="display: flex;">
+                    <div style="margin-top: 15px; padding-left: 25%;">
+                        <form method="POST" action = "/result/">
+                        
+                            {% csrf_token %}
+                            <select  id="select"  name = "s1" style="color: antiquewhite !important;
+                                                                     border-radius: 20px !important;
+                                                                     background: black !important;">
+                                <option value="default">Select Symptom 1</option>
+                            </select>
+                            
+                            <select class = "mx-4 my-4" id="select1" name = "s2" style="color: antiquewhite !important;
+                                                                     border-radius: 20px !important;
+                                                                     background: black !important;">
+                                <option value="default">Select Symptom 2</option>
+                            </select>
+                            <br>
+
+                            <select class = "my-4" id="select2" name = "s3" style="color: antiquewhite !important;
+                                                                     border-radius: 20px !important;
+                                                                     background: black !important;">
+                                <option value="default">Select Symptom 3</option>
+                            </select>
+                            <select class = "mx-4 my-4" id="select3" name = "s4" style="color: antiquewhite !important;
+                                                                     border-radius: 20px !important;
+                                                                     background: black !important;">
+                                <option value="default">Select Symptom 4</option>
+                            </select>
+                            
+                            <br>
+                            <center>
+                            <select class = "my-4" id="select4" name = "s5" style="color: antiquewhite !important;
+                                                                     border-radius: 20px !important;
+                                                                     background: black !important;">
+                                <option value="default">Select Symptom 5</option>
+                            </select>
+                        </center>
+                            <center>
+                             <button class="my-4 btn button-class font-weight-bold btn-primary btn-block"
+	                                style="width:40%;" type="submit">Show Result</button>
+                            </center>
+                        </form>
+                        {{msg}}
+                        <br> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var arr =[
+        "back_pain",
+        "constipation",
+        "abdominal_pain",
+        "diarrhoea",
+        "mild_fever",
+        'yellow_urine',
+        'yellowing_of_eyes',
+        'acute_liver_failure',
+        'fluid_overload',
+        'swelling_of_stomach',
+        'swelled_lymph_nodes',
+        'malaise',
+        'blurred_and_distorted_vision',
+        'phlegm',
+        'throat_irritation',
+        'redness_of_eyes',
+        'sinus_pressure',
+        'runny_nose',
+        'congestion',
+        'chest_pain',
+        'weakness_in_limbs',
+        'fast_heart_rate',
+        'pain_during_bowel_movements',
+        'pain_in_anal_region',
+        'bloody_stool',
+        'irritation_in_anus',
+        'neck_pain',
+        'dizziness',
+        'cramps',
+        'bruising',
+        'obesity',
+        'swollen_legs',
+        'swollen_blood_vessels',
+        'puffy_face_and_eyes',
+        'enlarged_thyroid',
+        'brittle_nails',
+        'swollen_extremeties',
+        'excessive_hunger',
+        'extra_marital_contacts',
+        'drying_and_tingling_lips',
+        'slurred_speech',
+        'knee_pain',
+        'hip_joint_pain',
+        'muscle_weakness',
+        'stiff_neck',
+        'swelling_joints',
+        'movement_stiffness',
+        'spinning_movements',
+        'loss_of_balance',
+        'unsteadiness',
+        'weakness_of_one_body_side',
+        'loss_of_smell',
+        'bladder_discomfort',
+        'foul_smell_of urine',
+        'continuous_feel_of_urine',
+        'passage_of_gases',
+        'internal_itching',
+        'toxic_look_(typhos)',
+        'depression',
+        'irritability',
+        'muscle_pain',
+        'altered_sensorium',
+        'red_spots_over_body',
+        'belly_pain',
+        'abnormal_menstruation',
+        'dischromic _patches',
+        'watering_from_eyes',
+        'increased_appetite',
+        'polyuria','family_history','mucoid_sputum',
+        'rusty_sputum','lack_of_concentration','visual_disturbances','receiving_blood_transfusion',
+        'receiving_unsterile_injections','coma','stomach_bleeding','distention_of_abdomen',
+        'history_of_alcohol_consumption','fluid_overload','blood_in_sputum','prominent_veins_on_calf',
+        'palpitations','painful_walking','pus_filled_pimples','blackheads','scurring','skin_peeling',
+        'silver_like_dusting','small_dents_in_nails','inflammatory_nails','blister','red_sore_around_nose',
+        'yellow_crust_ooze'
+];
+    var select = document.getElementById("select")
+    for(var i = 0; i < arr.length; i++)
+             {
+                 var option = document.createElement("option"),
+                     txt = document.createTextNode(arr[i]);
+                 option.appendChild(txt);
+                 option.setAttribute("value",arr[i]);
+                 select.insertBefore(option,select.lastChild);
+             }
+    var select1 = document.getElementById("select1")
+    for(var i = 0; i < arr.length; i++)
+             {
+                 var option = document.createElement("option"),
+                     txt = document.createTextNode(arr[i]);
+                 option.appendChild(txt);
+                 option.setAttribute("value",arr[i]);
+                 select1.insertBefore(option,select1.lastChild);
+             }
+    var select2 = document.getElementById("select2")
+    for(var i = 0; i < arr.length; i++)
+             {
+                 var option = document.createElement("option"),
+                     txt = document.createTextNode(arr[i]);
+                 option.appendChild(txt);
+                 option.setAttribute("value",arr[i]);
+                 select2.insertBefore(option,select2.lastChild);
+             }
+             var select = document.getElementById("select3")
+    for(var i = 0; i < arr.length; i++)
+             {
+                 var option = document.createElement("option"),
+                     txt = document.createTextNode(arr[i]);
+                 option.appendChild(txt);
+                 option.setAttribute("value",arr[i]);
+                 select3.insertBefore(option,select3.lastChild);
+             }var select4 = document.getElementById("select4")
+    for(var i = 0; i < arr.length; i++)
+             {
+                 var option = document.createElement("option"),
+                     txt = document.createTextNode(arr[i]);
+                 option.appendChild(txt);
+                 option.setAttribute("value",arr[i]);
+                 select4.insertBefore(option,select4.lastChild);
+             }
+</script>
+
+{% endblock contents %}

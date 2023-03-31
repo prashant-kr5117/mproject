@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Login</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/signupStyle.css' %}">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css.map">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js">
+
+	</head>
+	<body>
+		<div class="form">
+			
+			<h1> Login Here!</h1>
+
+			<form action="logininc/" method="post" accept-charset="utf-8">
+				{% csrf_token %}
+				<input type="email"  name="email"  placeholder="Email" required><br>
+				<input type="password"  name="password"  placeholder="Password" required><br>
+				<button>Login</button>
+				<h3>Don't have account ? <a class="aclk" href="signup/">Click here!</a></h3>
+			</form>
+		</div>
+	</body>
+</html>

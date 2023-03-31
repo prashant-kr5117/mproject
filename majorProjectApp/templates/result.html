@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Result {% endblock title %}
+{% load static %}
+{% block contents %}
+
+<div style="margin: 30px;margin-left: 15%;margin-right: 15%;background-color: black; border-radius: 18px; padding: 10px; padding-left: 30px;padding-right:30px; padding-top: 30px;">
+  <div style=" display: flex;flex-wrap: nowrap;justify-content:space-around;">
+    <h3 style="color: white;">Name: {{ userdetail.fullname }}</h3><br>
+    <h3 style="color: white;">Gender: {{ userdetail.gender }}</h3><br>
+  </div>
+  <h4 style="color: yellow; margin-top: 40px;">The symptoms provided are</h4><br>
+  <h4 style="color: white;">1.{{ symptom1 }}</h4><br>
+  <h4 style="color: white;">2.{{ symptom2 }}</h4><br>
+  <h4 style="color: white;">3.{{ symptom3 }}</h4><br>
+  <h4 style="color: white;">4.{{ symptom4 }}</h4><br>
+  <h4 style="color: white;">5.{{ symptom5 }}</h4><br>
+  <h3 style="color: yellow; margin-top: 20px;">According to Observation you have <a href="{{indirect}}" target="_blank">{{ main }}</a></h3><br>
+  <h4 style="color: yellow; margin-top: 20px;">The medicine's prescribe are</h3><br>
+  <h5 style="color: white;">{{ medicine1 }}</h5><br>
+  <h5 style="color: white;">{{ medicine2 }}</h5><br>
+  <center>
+    <button style="margin-top: 20px;border-radius: 50px;padding: 10px;" onclick="window.print()">Print Report</button>
+  </center>
+</div>
+{% endblock contents %}
